@@ -55,7 +55,7 @@ public class MainController {
     ) throws IOException {
         Message message = new Message(text, tag, user);
 
-        if (file != null) {
+        if (!file.isEmpty()) {
             File uploadDir = new File(uploadPath);
 
             if (!uploadDir.exists()) {
@@ -63,9 +63,7 @@ public class MainController {
             }
 
             String uuidFile = UUID.randomUUID().toString();
-            String resultFilename = uuidFile + ".png";
-            //+ file.getOriginalFilename();
-
+            String resultFilename = uuidFile + "." + file.getOriginalFilename();
             file.transferTo(new File(uploadPath + "/" + resultFilename));
 
             message.setFilename(resultFilename);
@@ -76,6 +74,6 @@ public class MainController {
 
         model.put("messages", messages);
 
-        return "main";
+        return "redirect:/main";
     }
 }
