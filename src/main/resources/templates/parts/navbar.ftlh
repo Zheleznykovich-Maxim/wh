@@ -1,3 +1,6 @@
+<#include "security.ftlh">
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Wh</a>
@@ -12,10 +15,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/main">Messages</a>
                 </li>
+                <#if isAdmin>
                 <li class="nav-item">
                     <a class="nav-link" href="/user">User list</a>
                 </li>
+                </#if>
             </ul>
+            <div class="navbar-text">
+                ${name}
+            </div>
         </div>
     </div>
 </nav>
