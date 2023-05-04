@@ -42,19 +42,21 @@
     </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
     <#list messages as message>
-    <div class="card my-3">
-        <#if message.filename??>
+    <div class="col">
+        <div class="card">
+            <#if message.filename??>
             <img src="/img/${message.filename}" class="card-img-top">
-        </#if>
-        <div class="m-2">
-            <b>${message.id}</b>
-            <span>${message.text}</span>
-            <i>${message.tag}</i>
+            </#if>
+            <div class="card-body">
+                <b>${message.id}</b>
+                <span>${message.text}</span>
+                <i>${message.tag}</i>
+            </div>
+            <div class="card-footer text-muted">
+                ${message.authorName}
         </div>
-        <div class="card-footer text-muted">
-            ${message.authorName}
         </div>
     </div>
     <#else>
