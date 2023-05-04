@@ -1,5 +1,5 @@
 <#include "security.ftlh">
-
+<#import "login.ftlh" as l>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -21,9 +21,8 @@
                 </li>
                 </#if>
             </ul>
-            <div class="navbar-text">
-                ${name}
-            </div>
+            <div class="navbar-text me-3">${name}</div>
+            <#if name !="unknown"><@l.logout/></#if>
         </div>
     </div>
 </nav>
