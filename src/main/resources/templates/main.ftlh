@@ -31,8 +31,11 @@
                     <input type="text" name="tag" class="form-control" placeholder="Тэг">
                 </div>
             </div>
-            <div class="mb-3">
-                <input class="form-control" type="file" id="formFile">
+            <div class="form-group">
+                <div class="custom-file">
+                    <input type="file" name="file" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
             </div>
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <div class="mb-3">
