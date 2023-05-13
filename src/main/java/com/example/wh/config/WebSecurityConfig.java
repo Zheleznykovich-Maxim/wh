@@ -21,10 +21,11 @@ public class WebSecurityConfig {
     private UserService userService;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Bean
-    public PasswordEncoder getPasswordEncoder() {
-        return new BCryptPasswordEncoder(8);
-    }
+
+//    @Bean
+//    public PasswordEncoder getPasswordEncoder() {
+//        return new BCryptPasswordEncoder(8);
+//    }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
