@@ -16,11 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/main">Messages</a>
                 </li>
-                <#if user??>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/profile">Profile</a>
+                    <a class="nav-link" href="/user">User list</a>
                 </li>
-                </#if>
             </ul>
             <div class="navbar-text me-3">${name}</div>
             <#if name !="unknown"><@l.logout/></#if>
