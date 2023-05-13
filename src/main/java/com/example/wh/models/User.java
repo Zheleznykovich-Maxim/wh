@@ -12,6 +12,11 @@ import java.util.Set;
 @Entity
 @Table(name = "usr")
 public class User implements UserDetails {
+    @PostLoad
+    private void postLoadFunction1(){
+        this.password2 = this.password;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,7 +25,7 @@ public class User implements UserDetails {
     @NotBlank(message = "Password can't be empty")
     private String password;
     @Transient
-    @NotBlank(message = "Password confirmation can't be empty")
+    @NotBlank(message = "Password confirmation cannot be empty", groups = NoDefault.class)
     private String password2;
     private boolean active;
     @Email(message = "Email is not correct")
