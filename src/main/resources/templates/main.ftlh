@@ -23,7 +23,13 @@
         <form method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <div class="input-group">
-                    <input type="text" name="text" class="form-control" placeholder="Введите сообщение" />
+                    <input type="text" name="text" class="form-control ${(textError??)?string('is-invalid', '')}"
+                           placeholder="Введите сообщение" value="<#if message??>${message.text}</#if>"/>
+                    <#if textError??>
+                    <div class="invalid-feedback">
+                        ${textError}
+                    </div>
+                    </#if>
                 </div>
             </div>
             <div class="mb-3">
